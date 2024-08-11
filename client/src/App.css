@@ -42,12 +42,12 @@
 }
 
 .buttonThree{
-  color : rgb(27, 27, 27) ;
+  
+  color : rgb(181, 223, 255) ;
   border : 1px solid rgb(5, 5, 5);
-  background-color: rgb(233, 238, 251);
+  background-color: rgb(14, 46, 126);
   border-radius: 6px;
-  width :150px ;
-  height : 40px;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,15 @@
 .buttonFour{
   color : rgb(1, 7, 24) ;
   border : 1px solid rgb(0, 6, 22);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonFive{
+  color : rgb(243, 187, 187) ;
+  background-color: rgb(44, 1, 1);
+  border : 1px solid rgb(0, 68, 254);
   border-radius: 2px;
   display: flex;
   justify-content: center;
@@ -78,4 +87,14 @@
 
 .brd {
   border: 1px solid black;
+}
+
+.bdr{
+  border: 1px solid black;
+}
+
+.fc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

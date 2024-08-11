@@ -11,14 +11,14 @@ const SingleCardProd = (item) => {
       <div className="">
         <div>
           <div className="">
-            <img className="border border-slate-700 h-64 w-96 " src={item.cover_image} alt="" />
+            <img className="border border-slate-700 h-64 w-full " src={item.cover_image} alt="" />
           </div>
-          <div className="flex m-2 text-lg font-medium ">{item.model_name}</div>
-          <div className="flex m-2">{item.brand_name}</div>
-          <div className="flex m-2">
+          <div className="flex m-1 text-lg font-medium ">{item.model_name}</div>
+          <div className="flex m-1">{item.brand_name}</div>
+          <div className="flex m-1">
             <StarRating {...item }/>
           </div>
-          <div className="flex justify-end m-2">{item.price} $</div>
+          <div className="flex justify-end mr-2">{item.price} $</div>
           <div></div>
         </div>
       </div>

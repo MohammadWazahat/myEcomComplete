@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineAccountCircle } from "react-icons/md";
@@ -11,8 +11,9 @@ const Navbar = () => {
   const { state } = useContext(CartContext);
   return (
     <div>
-      <section>
-        <header>
+      {/* <section className="fixed top-0 w-full"> */}
+      <section className="">
+        <header className="">
           <div className=" navbarColor flex  justify-around items-center p-2">
             <div className=" text-2xl font-bold">
               <span className="text-green-700 text-3xl">M</span>OBILE
@@ -21,20 +22,20 @@ const Navbar = () => {
             <div className="flex item-center justify-center ">
               <ul className="flex gap-6 ">
                 <li className="">
-                  <NavLink to="/" className="">
+                  <Link to="/" className="">
                     <IoHomeOutline
                       color="rgb(0, 68, 254)"
                       className=" h-8 w-8 "
                     />
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="">
-                  <NavLink to="/allProducts" className="">
+                  <Link to="/allProducts" className="">
                     <BiCategory color="rgb(0, 68, 254)" className="h-8 w-8 " />
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="">
-                  <NavLink to="/cart" className="">
+                  <Link to="/cart" className="">
                     <div className="flex">
                       <div>
                         <MdOutlineShoppingCart
@@ -44,15 +45,15 @@ const Navbar = () => {
                       </div>
                       <span>{state.totalItems} </span>
                     </div>
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="">
-                  <NavLink to="/logIn" className="">
+                  <Link to="/logIn" className="">
                     <MdOutlineAccountCircle
                       color="rgb(0, 68, 254)"
                       className="h-8 w-8 "
                     />
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
             </div>

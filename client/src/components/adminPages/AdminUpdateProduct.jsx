@@ -49,13 +49,13 @@ const AdminUpdateProduct = () => {
     <div>
       <div>
         <div>
-          <div className="flex justify-center items-center  text-2xl font-medium mt-6 mx-2 ">
+          <div className="flex justify-center items-center  text-2xl font-medium my-12 mx-2 ">
             Update Your Product Details
           </div>
         </div>
-        <div>
-          <div className="brd mx-2 mt-12 p-1 py-8">
-            <form onSubmit={submitForm} className="max-w-sm mx-auto">
+        <div className="fc" >
+          <div className="brd p-3 py-8 w-full lg:w-1/2 mx-2">
+            <form onSubmit={submitForm} className="">
               <div className="mb-5">
                 <label
                   htmlFor="brand_name"
@@ -347,9 +347,9 @@ const AdminUpdateProduct = () => {
               </div>
               <button
                 type="submit"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full py-2.5 text-center"
               >
-                Submit
+               Update Details
               </button>
             </form>
           </div>

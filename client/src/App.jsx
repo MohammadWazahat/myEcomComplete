@@ -4,6 +4,7 @@ import "./App.css";
 import DataProvider from "./contexts/AllDataContext";
 import SortAndFilterProvider from "./contexts/SortAndFilterContext";
 import CartProvider from "./contexts/CartContext";
+import Navbar from "./components/header/Navbar";
 
 const App = () => {
   return (

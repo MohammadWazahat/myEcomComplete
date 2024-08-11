@@ -68,54 +68,65 @@ const Cart = () => {
 
   return (
     <>
-      <div>
-        <div className="flex justify-center text-2xl font-medium mt-6 mx-2">
-          My Cart
-        </div>
-      </div>
-      <div className=" mt-16 mx-2 flex flex-col gap-8">
-        {myCartData.map((item, index) => {
-          return (
-            <div key={index}>
-              <SingleCartItem {...item} />
+      <div className="flex flex-col lg:flex-row lg:gap-8 lg:mx-8 ">
+        <div className=" lg:w-1/2">
+          <section>
+            <div>
+              <div className="flex justify-center text-2xl font-medium my-12">
+                My Cart
+              </div>
             </div>
-          );
-        })}
-      </div>
-      <div>
-        <div>
-          <button
-            className="p-2 m-4 border border-slate-700"
-            onClick={() => deleteAllCartItems()}
-          >
-            Delete All
-          </button>
+            <div className=" flex flex-col gap-8 mx-2">
+              {myCartData.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <SingleCartItem {...item} />
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex  m-2 mt-16  ">
+              <button
+                className="border border-slate-700 rounded-full p-3 bg-red-400 w-full "
+                onClick={() => deleteAllCartItems()}
+              >
+                Delete All Cart Items
+              </button>
+            </div>
+          </section>
+        </div>
+        <div className="lg:w-1/2 mt-32 ">
+          <section className="">
+            <div className=" bgcOne  flex flex-col border border-slate-700 ">
+              <div className="p-4 py-8 flex flex-col gap-4">
+                <div className="">Cart Total : {state.totalPrice}$ </div>
+                <div>Shipping Fee : {state.shippingFee}$</div>
+                <div className="text-xl text-red-400">
+                  Order Total : {state.totalPrice + state.shippingFee}${" "}
+                </div>
+                <div>
+                  <button
+                    className="w-full border border-slate-100 hover:border-red-400 rounded-full py-2"
+                    onClick={() => checkoutHandler(amount)}
+                  >
+                    Check Out
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className="mt-12 flex justify-center items-center ">
+              <NavLink to="/allProducts">
+                <button className="border border-slate-800 p-3 px-5 m-2 ">
+                  Shop Now
+                </button>
+              </NavLink>
+            </div>
+          </section>
         </div>
       </div>
-      <div className=" bgcOne mt-32 flex flex-col border border-slate-700 mx-2 ">
-        <div className="p-4">
-          <div className="">Cart Total : {state.totalPrice}$ </div>
-          <div>Shipping Fee : {state.shippingFee}$</div>
-          <div className="text-xl text-red-400">
-            Order Total : {state.totalPrice + state.shippingFee}${" "}
-          </div>
-          <div>
-            <button
-              className="p-2 m-4 border border-slate-700"
-              onClick={() => checkoutHandler(amount)}
-            >
-              Check Out
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="mt-12 flex justify-center items-center ">
-        <NavLink to="/allProducts">
-          <button className="border border-slate-800 p-3 px-5 m-2 ">
-            Shop Now
-          </button>
-        </NavLink>
-      </div>
+
       <hr className="horizon border border-slate-800 mx-4 m-2 " />
     </>
   );

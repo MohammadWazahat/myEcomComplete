@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { SortAndFilterContext } from "../../contexts/SortAndFilterContext";
+import HomeProducts from "./HomeProducts";
 
 const Home = () => {
   const { products, myUser } = useContext(SortAndFilterContext);
@@ -37,18 +38,21 @@ const Home = () => {
             </div>
           </div>
         ) : (
-          Y.map((item, index) => {
-            return (
-              <div key={index}>
-                <div
-                  className=" flex border border-slate-700 m-6 mx-12 h-48 justify-center items-center "
-                  // onClick={() => FilterByBrand(item)}
-                >
-                  <div className="textColorDark text-2xl">{item}</div>
-                </div>
-              </div>
-            );
-          })
+          <section>
+            <HomeProducts />
+          </section>
+          // Y.map((item, index) => {
+          //   return (
+          //     <div key={index}>
+          //       <div
+          //         className=" flex border border-slate-700 m-6 mx-12 h-48 justify-center items-center "
+
+          //       >
+          //         <div className="textColorDark text-2xl">{item}</div>
+          //       </div>
+          //     </div>
+          //   );
+          // })
         )}
       </div>
       <div className="flex justify-center items-center ">

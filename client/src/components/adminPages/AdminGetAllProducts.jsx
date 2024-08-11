@@ -40,7 +40,7 @@ const AdminGetAllProducts = () => {
           </Link>
         </div>
         <div>
-          <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-3 sm:gap-8 ">
+          <div className="">
             {!myUser ? (
               <div className="">
                 <div className="flex text-red-600 text-3xl justify-center">
@@ -55,13 +55,19 @@ const AdminGetAllProducts = () => {
                 </div>
               </div>
             ) : (
-              myUser.map((user, index) => {
-                return (
-                  <div className="flex justify-center " key={index}>
-                    <AdminSingleCard {...user} />
-                  </div>
-                );
-              })
+            <div className="fc">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {
+                 myUser.map((user, index) => {
+                  return (
+                    <div className="" key={index}>
+                      <AdminSingleCard {...user} />
+                    </div>
+                  );
+                })
+              }
+             </div>
+            </div>
             )}
           </div>
           <hr className="horizon border border-slate-800  mt-24" />
